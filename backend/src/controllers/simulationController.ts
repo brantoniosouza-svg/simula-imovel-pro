@@ -22,12 +22,12 @@ class SimulationController {
         year: year || new Date().getFullYear(),
       });
 
-      res.status(201).json({
+      return res.status(201).json({
         id: `sim_${Date.now()}`,
         ...result,
       });
     } catch (error) {
-      next(error);
+      return next(error);
     }
   }
 }
